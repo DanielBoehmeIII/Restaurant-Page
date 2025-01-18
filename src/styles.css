@@ -30,7 +30,7 @@ body {
   background-color: var(--bg-color);
   overflow: hidden;
   display: grid;
-  grid-template-rows: 15% 85%;
+  grid-template-rows: 20% 80%;
   background-image: url("https://images.unsplash.com/photo-1484589065579-248aad0d8b13?q=80&w=1959&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
   background-size: cover;
   background-position: center;
@@ -96,7 +96,7 @@ nav {
 
 .nav-button {
   width: 5em;
-  height: 3em;
+  height: 5em;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -104,7 +104,7 @@ nav {
   background-size: 130%;
   background-position: center;
   color: rgba(255, 205, 50, 0.9);
-  font-size: 1.5rem;
+  font-size: 2rem;
   font-weight: 500;
   font-family: "Diphylleia", serif;
   /* -webkit-text-stroke: 0.3px black; */
@@ -162,9 +162,9 @@ nav {
 }
 
 #cantina-banner {
-  width: 70%;
-  height: 80%;
-  padding-top: 1%;
+  width: 65%;
+  height: 75%;
+  padding-top: 0.5%;
   filter: drop-shadow(0px 0px 10px #000000a1);
 }
 
@@ -195,7 +195,7 @@ svg {
 #info-div h6 {
   display: flex;
   justify-content: center;
-  font-size: 5rem;
+  font-size: 7rem;
   background-image: url("https://images.unsplash.com/photo-1550053808-52a75a05955d?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
   background-position: center;
   background-size: 50%;
@@ -217,17 +217,15 @@ svg {
   border-bottom-left-radius: 5%;
   border-bottom-right-radius: 5%;
   /* background-color: #333333a1; */
-  background-image: url("https://plus.unsplash.com/premium_photo-1675805903540-4599c4cd440b?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
+  background-image: url("https://i0.wp.com/picjumbo.com/wp-content/uploads/moon-surface-seamless-texture-free-photo.png?w=2210&quality=70");
   background-position: center;
   background-size: 50%;
 }
 
 #info-div p {
   font-size: 2.5rem;
-  color: white;
-  text-shadow:
-    100px 0px 5px #000000,
-    0px 100px 5px #000000;
+  color: yellow;
+  text-shadow: 0px 100px 10px #000000;
   padding: 5%;
   font-family: "Diphylleia", serif;
   padding-top: 0;
