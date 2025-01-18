@@ -87,6 +87,7 @@ aboutButton.addEventListener("click", () => {
 const themeSong = new Audio(themeSongPath);
 const blasterSounds = new Audio(blasterSoundsPath);
 const soundButton = document.getElementById("sound-button");
+soundButton.textContent = "Start the band?";
 soundButton.addEventListener("click", () => {
   soundClicked = !soundClicked;
   if (soundClicked) {
