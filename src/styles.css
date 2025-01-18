@@ -30,7 +30,7 @@ body {
   background-color: var(--bg-color);
   overflow: hidden;
   display: grid;
-  grid-template-rows: 10% 90%;
+  grid-template-rows: 15% 85%;
   background-image: url("https://images.unsplash.com/photo-1484589065579-248aad0d8b13?q=80&w=1959&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
   background-size: cover;
   background-position: center;
@@ -54,7 +54,20 @@ nav {
   align-items: center;
 }
 
-@keyframes zoom {
+#banner.hidden {
+  display: none;
+}
+
+@keyframes zoom-across {
+  0% {
+    transform: translateX(-100%) translateY(300%) scale(1);
+  }
+  100% {
+    transform: translateX(700%) translateY(-150%) scale(0.2);
+  }
+}
+
+@keyframes zoom-through {
   0% {
     transform: translateX(-100%) translateY(300%) scale(0.8);
   }
@@ -63,18 +76,64 @@ nav {
   }
 }
 
+@keyframes zoom-in-left {
+  0% {
+    transform: scale(0.3);
+  }
+  100% {
+    transform: translateX(-700%) translateY(-150%) scale(5);
+  }
+}
+
+@keyframes zoom-in-right {
+  0% {
+    transform: translateX(-150%) translateY(-150%) scale(0.3);
+  }
+  100% {
+    transform: translateX(700%) translateY(150%) scale(5);
+  }
+}
+
 .nav-button {
   width: 5em;
   height: 3em;
+  display: flex;
   justify-content: center;
   align-items: center;
-  background-color: rgba(55, 55, 55, 1);
-  color: rgba(255, 205, 50, 0.8);
+  /* background-color: rgba(55, 55, 55, 1); */
+  background-size: 130%;
+  background-position: center;
+  color: rgba(255, 205, 50, 0.9);
   font-size: 1.5rem;
+  font-weight: 500;
   font-family: "Diphylleia", serif;
+  /* -webkit-text-stroke: 0.3px black; */
+  text-shadow: 0 5px 3px #000000;
   border: none;
-  border-radius: 10px;
-  box-shadow: 0 5px 10px #000000a1;
+  border-radius: 100%;
+  padding: 3.5%;
+  text-shadow:
+    -1px -1px 0 #000,
+    1px -1px 0 #000,
+    -1px 1px 0 #000,
+    1px 1px 0 #000,
+    0 5px 10px #000000a1;
+}
+
+#home-button {
+  background-image: url("https://upload.wikimedia.org/wikipedia/commons/thumb/d/d6/Populated_Planet.png/1200px-Populated_Planet.png");
+}
+
+#menu-button {
+  background-image: url("https://img.freepik.com/premium-psd/purple-planet-isolated-transparent-background_84443-19177.jpg");
+}
+
+#about-button {
+  background-image: url("https://images.rawpixel.com/image_png_800/cHJpdmF0ZS9sci9pbWFnZXMvd2Vic2l0ZS8yMDI0LTEwL3Jhd3BpeGVsb2ZmaWNlOV9wbmdfY2xpcGFydF9vZl9ncmV5X21lcmN1cnlfcGxhbmV0X2lzb2xhdGVkX29uX185OTY0NGI0Ny0xYjM4LTRmZGEtYjAwYS05MDliZmUyNzc3MWMucG5n.png");
+}
+
+#sound-button {
+  background-image: url("https://w7.pngwing.com/pngs/974/330/png-transparent-earth-analog-desert-planet-planets-planet-earth-illustration-atmosphere-computer-wallpaper-sphere-thumbnail.png");
 }
 
 #content {
@@ -88,7 +147,8 @@ nav {
   gap: 5%;
 }
 
-h6 {
+#banner h6,
+#info-div h6 {
   font-size: 10rem;
   padding: 5%;
   padding-top: 5%;
@@ -106,4 +166,72 @@ h6 {
   height: 80%;
   padding-top: 1%;
   filter: drop-shadow(0px 0px 10px #000000a1);
+}
+
+svg {
+  padding: 0px;
+  gap: 0px;
+}
+
+#menu {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  background-image: url("./img/menu.png");
+  background-position: center;
+  background-size: 40%;
+  background-repeat: no-repeat;
+  margin-top: 3%;
+  gap: 5%;
+}
+
+.page {
+  display: none;
+}
+
+#menu h6,
+#info-div h6 {
+  display: flex;
+  justify-content: center;
+  font-size: 5rem;
+  background-image: url("https://images.unsplash.com/photo-1550053808-52a75a05955d?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
+  background-position: center;
+  background-size: 50%;
+  width: 90%;
+  border-top-left-radius: 50%;
+  border-top-right-radius: 50%;
+}
+
+#info-div {
+  display: flex;
+  justify-self: center;
+  align-items: center;
+  flex-direction: column;
+  width: 70%;
+  height: 95%;
+  gap: 5%;
+  border-top-left-radius: 30%;
+  border-top-right-radius: 30%;
+  border-bottom-left-radius: 5%;
+  border-bottom-right-radius: 5%;
+  /* background-color: #333333a1; */
+  background-image: url("https://plus.unsplash.com/premium_photo-1675805903540-4599c4cd440b?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
+  background-position: center;
+  background-size: 50%;
+}
+
+#info-div p {
+  font-size: 2.5rem;
+  color: white;
+  text-shadow:
+    100px 0px 5px #000000,
+    0px 100px 5px #000000;
+  padding: 5%;
+  font-family: "Diphylleia", serif;
+  padding-top: 0;
+  text-align: left;
+  width: 75%;
+  height: 100%;
 }
